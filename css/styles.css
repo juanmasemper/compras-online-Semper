@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #ffffff);
+  color: #333;
+}
+
+h1 {
+  font-weight: bold;
+  color: #222;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.navbar {
+  margin-bottom: 0; /* 🔹 elimina espacio extra debajo del menú */
+}
+
+/* 🔹 Quita espacio entre navbar y carrusel */
+#mainCarousel {
+  margin-top: -1px;
+}
+
+/* 🔹 Ajuste de imágenes del carrusel */
+.carousel-item img {
+  height: 400px;       /* mismo alto en todas las imágenes */
+  object-fit: cover;   /* recorta sin deformar */
+  width: 100%;
+}
+
+/* 🔹 Ajuste solo para la segunda imagen (se ve más arriba) */
+.carousel-item:nth-child(2) img {
+  object-position: top;
+}
+
+/* 🔹 Altura menor en móviles */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+}
+
+/* 🔹 Fondo semitransparente en captions */
+.caption-bg {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+}
