@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador de Compras</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <!-- Menú -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html">Compras Online</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/pages/productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/pages/carrito.html">Carrito</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Simulador de Compras</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+  </head>
+  
+  <body data-page="products">
+    
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="../img/logo.png" alt="Logo Compras Online" width="70" height="70" class="me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+          </ul>
+        </div>
       </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container my-5">
+      <h1 class="text-center mb-4">Simulador de Compras Online</h1>
+      <p class="lead text-center">
+        Acá podés ver los productos disponibles y agregarlos a tu carrito. Los datos se guardan en <code>localStorage</code>.
+      </p>
+
+      <!-- Grid de productos (se llena con JS) -->
+      <div id="productList" class="row mt-4 g-3"></div>
     </div>
-  </nav>
 
-  <!-- Contenido principal -->
-  <div class="container my-5">
-    <h1 class="text-center">Simulador de Compras Online</h1>
-    <p class="lead text-center">
-      Este simulador te permitirá elegir productos, agregarlos a un carrito y calcular el total.
-      La interacción ocurre en el cuadro de alerta y en la consola de JavaScript.
-    </p>
-
-    <!-- Tarjetas de productos -->
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://acdn-us.mitiendanube.com/stores/001/749/890/products/whatsapp-image-2024-06-13-at-13-19-38-badfa4ee5c18a15bc617183124180554-480-0.jpeg" class="card-img-top" alt="Zapatillas">
-          <div class="card-body">
-            <h5 class="card-title">Zapatillas</h5>
-            <p class="card-text">$35.000</p>
+    <!-- Modal de confirmación (producto agregado) -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content festivo">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="modalCarritoLabel">Producto agregado</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://vikati.net/wp-content/uploads/2024/11/negra.webp" class="card-img-top" alt="Remera">
-          <div class="card-body">
-            <h5 class="card-title">Remera</h5>
-            <p class="card-text">$12.000</p>
+          <div class="modal-body text-center">
+            <div id="modalCarritoIcon" style="font-size: 3rem;">🛒</div>
+            <p id="modalCarritoTexto" class="mt-3"></p>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="https://acdn-us.mitiendanube.com/stores/004/997/328/products/img_2855-c1d66138a86264ebc717418170067621-480-0.jpeg" class="card-img-top" alt="Pantalón">
-          <div class="card-body">
-            <h5 class="card-title">Pantalón</h5>
-            <p class="card-text">$18.000</p>
+          <div class="modal-footer justify-content-center">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+            <a href="carrito.html" class="btn btn-success">Ir al carrito</a>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="/js/app.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- Modal para mostrar imagen en grande -->
+    <div class="modal fade" id="modalImagenGrande" tabindex="-1" aria-labelledby="modalImagenGrandeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalImagenGrandeLabel">Imagen del producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img id="modalImagenGrandeImg" src="" alt="Imagen producto" class="img-fluid rounded">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/app.js"></script>
+  </body>
 </html>

@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador de Compras</title>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <!-- Menú -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">Compras Online</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
-              aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Compras</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body data-page="home">
+    
+    <!-- Menú -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="./img/logo.png" alt="Logo Compras Online" width="70" height="70" class="me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/productos.html">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/carrito.html">Carrito</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Slider -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://acdn-us.mitiendanube.com/stores/002/644/790/themes/new_linkedman/2-slide-1750103694720-4111271181-30d7211235d15399973b1ed6079127f81750103689-1920-1920.webp?1624525476" class="d-block w-100" alt="Zapatillas">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h5>Ofertas en Calzado</h5>
+            <p>Encuentra las mejores zapatillas al mejor precio.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://lacallevistealamoda.com/wp-content/uploads/2021/11/15bed66da12a2047bbac1cbcfc1345ec.jpg" class="d-block w-100" alt="Remera">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h5>Moda para todos</h5>
+            <p>Ropa cómoda, moderna y accesible.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://dcdn-us.mitiendanube.com/stores/250/501/themes/cali/slide-1754662084491-6128498211-d26b5a8db14e9c42fbd666b6600d07ff1754662087.png?1579255617" class="d-block w-100" alt="Pantalón">
+          <div class="carousel-caption d-none d-md-block caption-bg">
+            <h5>Estilo urbano</h5>
+            <p>Viste con lo último en tendencias.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/pages/productos.html">Productos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/pages/carrito.html">Carrito</a></li>
-        </ul>
-      </div>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
     </div>
-  </nav>
 
-  <!-- Slider -->
-  <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+    <!-- Información principal -->
+    <div class="container my-5">
+      <h1 class="text-center">Bienvenido al Simulador de Compras</h1>
+      <p class="lead text-center">
+        Aquí podrás explorar productos, agregarlos a tu carrito y calcular el total de tu compra 
+        de manera sencilla. La interacción se realiza directamente en esta web, sin necesidad de usar consola.
+      </p>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://acdn-us.mitiendanube.com/stores/002/644/790/themes/new_linkedman/2-slide-1750103694720-4111271181-30d7211235d15399973b1ed6079127f81750103689-1920-1920.webp?1624525476" class="d-block w-100" alt="Zapatillas">
-        <div class="carousel-caption d-none d-md-block caption-bg">
-          <h5>Ofertas en Calzado</h5>
-          <p>Encuentra las mejores zapatillas al mejor precio.</p>
+
+    <!-- Sección de información importante -->
+    <div class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h3>Interacción con el DOM</h3>
+          <p>Todos los datos se ingresan y muestran en la página mediante formularios y eventos.</p>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://lacallevistealamoda.com/wp-content/uploads/2021/11/15bed66da12a2047bbac1cbcfc1345ec.jpg" class="d-block w-100" alt="Remera">
-        <div class="carousel-caption d-none d-md-block caption-bg">
-          <h5>Moda para todos</h5>
-          <p>Ropa cómoda, moderna y accesible.</p>
+        <div class="col-md-4">
+          <h3>Carrito Persistente</h3>
+          <p>Los productos se guardan en el carrito y en localStorage, incluso al recargar la página.</p>
         </div>
-      </div>
-      <div class="carousel-item">
-        <img src="https://dcdn-us.mitiendanube.com/stores/250/501/themes/cali/slide-1754662084491-6128498211-d26b5a8db14e9c42fbd666b6600d07ff1754662087.png?1579255617" class="d-block w-100" alt="Pantalón">
-        <div class="carousel-caption d-none d-md-block caption-bg">
-          <h5>Estilo urbano</h5>
-          <p>Viste con lo último en tendencias.</p>
+        <div class="col-md-4">
+          <h3>Proyecto Educativo</h3>
+          <p>Este simulador fue creado como práctica de programación en JavaScript.</p>
         </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
 
-  <!-- Información principal -->
-  <div class="container my-5">
-    <h1 class="text-center">Bienvenido al Simulador de Compras</h1>
-    <p class="lead text-center">
-      Aquí podrás explorar productos, agregarlos a tu carrito y calcular el total de tu compra 
-    de manera sencilla.
-    </p>
-  </div>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <p>&copy; 2025 Compras Online - Proyecto académico</p>
+    </footer>
 
-  <!-- Sección de información importante -->
-  <div class="container my-5">
-    <div class="row text-center">
-      <div class="col-md-4">
-        <h3>Interacción en JS</h3>
-        <p>La lógica principal funciona con cuadros de diálogo (<em>prompt</em>, <em>alert</em>, <em>confirm</em>) y consola de JavaScript.</p>
-      </div>
-      <div class="col-md-4">
-        <h3>Carrito Simulado</h3>
-        <p>Podes agregar productos, calcular totales y aplicar descuentos automáticos según la compra.</p>
-      </div>
-      <div class="col-md-4">
-        <h3>Proyecto Educativo</h3>
-        <p>Este simulador está pensado como práctica de programación.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p>&copy; 2025 Compras Online - Proyecto académico</p>
-  </footer>
-
-  <!-- JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

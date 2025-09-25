@@ -14,48 +14,114 @@ h1 {
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
-
 .card img {
   height: 250px;
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.card img:hover {
+  transform: scale(1.05);
 }
 
-.navbar {
-  margin-bottom: 0; /* 🔹 elimina espacio extra debajo del menú */
-}
+/* Navbar */
+.navbar { margin-bottom: 0; }
 
-/* 🔹 Quita espacio entre navbar y carrusel */
-#mainCarousel {
-  margin-top: -1px;
-}
-
-/* 🔹 Ajuste de imágenes del carrusel */
+/* Carrusel */
+#mainCarousel { margin-top: -1px; }
 .carousel-item img {
-  height: 400px;       /* mismo alto en todas las imágenes */
-  object-fit: cover;   /* recorta sin deformar */
+  height: 400px;
+  object-fit: cover;
   width: 100%;
 }
-
-/* 🔹 Ajuste solo para la segunda imagen (se ve más arriba) */
-.carousel-item:nth-child(2) img {
-  object-position: top;
-}
-
-/* 🔹 Altura menor en móviles */
+.carousel-item:nth-child(2) img { object-position: top; }
 @media (max-width: 768px) {
-  .carousel-item img {
-    height: 300px;
-  }
+  .carousel-item img { height: 300px; }
 }
 
-/* 🔹 Fondo semitransparente en captions */
+/* Caption */
 .caption-bg {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 10px;
+}
+
+/* Modal festivo */
+@keyframes popIn { 0% { transform: scale(0.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.modal-content.festivo {
+  animation: popIn 0.5s ease-out, bounce 1s ease-in-out;
+  border: 3px solid #28a745;
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.7);
+}
+#modalCarritoTexto { font-size: 1.2rem; font-weight: bold; color: #28a745; }
+#modalCarritoTexto::after { content: " 🎉✨"; }
+
+/* Carrito - Tabla */
+.table img.img-carrito {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive carrito */
+@media (max-width: 768px) {
+  .table thead { display: none; }
+  .table tr {
+    display: block;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  .table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+    text-align: left;
+    padding-right: 10px;
+    color: #555;
+  }
+  .table td span,
+  .table td img {
+    flex: 1;
+    text-align: right;
+  }
+
+  /* 🔹 Evita que los botones se estiren */
+  .table td button {
+    flex: unset;
+  }
+
+  /* Ajustes botones mobile */
+  .btn-cantidad {
+    padding: 2px 6px;
+    font-size: 0.8rem;
+    line-height: 1;
+    border-radius: 5px;
+    min-width: 32px;
+  }
+
+  /* 🔹 Espaciado más compacto */
+  .btn-cantidad.decrease { margin-right: 4px !important; }
+  .btn-cantidad.increase { margin-left: 4px !important; }
+
+  .btn-eliminar {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
 }
