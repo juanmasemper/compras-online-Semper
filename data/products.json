@@ -1,0 +1,10 @@
+[
+  { "id": 1, "nombre": "Zapatillas", "precio": 135000, "img": "https://acdn-us.mitiendanube.com/stores/001/749/890/products/whatsapp-image-2024-06-13-at-13-19-38-badfa4ee5c18a15bc617183124180554-480-0.jpeg" },
+  { "id": 2, "nombre": "Remera", "precio": 12000,  "img": "https://vikati.net/wp-content/uploads/2024/11/negra.webp" },
+  { "id": 3, "nombre": "Pantalón", "precio": 18000, "img": "https://acdn-us.mitiendanube.com/stores/004/997/328/products/img_2855-c1d66138a86264ebc717418170067621-480-0.jpeg" },
+  { "id": 4, "nombre": "Campera", "precio": 55000, "img": "https://acdn-us.mitiendanube.com/stores/004/600/346/products/11-campera-eco-cuero-capucha-min-831b0df8253320685a17156999766723-480-0.jpg" },
+  { "id": 5, "nombre": "Gorra",   "precio": 8000,  "img": "https://i.pinimg.com/originals/04/36/01/0436010b6e9e3cbaef2884a627f66a47.jpg" },
+  { "id": 6, "nombre": "Mochila", "precio": 125000, "img": "https://i.etsystatic.com/18815814/r/il/72bbd4/3228610104/il_570xN.3228610104_8rg6.jpg" },
+  { "id": 7, "nombre": "Buzo Hoodie", "precio": 42000, "img": "https://acdn-us.mitiendanube.com/stores/003/795/340/products/orso_fw_e_2025-261-92e3405ba9bc55394217412010430934-1024-1024.jpg" },
+  { "id": 8, "nombre": "Medias Pack x3", "precio": 6000, "img": "https://acdn-us.mitiendanube.com/stores/001/166/471/products/whatsapp-image-2023-12-15-at-14-14-47-2-6de9e1c679a206d28017079247837939-480-0.jpeg" }
+]
