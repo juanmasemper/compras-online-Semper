@@ -112,8 +112,8 @@ function mostrarProductos() {
         title: prod.nombre,
         imageUrl: prod.img,
         imageAlt: prod.nombre,
-        imageWidth: 600,
-        imageHeight: 400,
+        imageWidth: 700,
+        imageHeight: 500,
         showConfirmButton: true,
         confirmButtonText: "Cerrar",
       });
